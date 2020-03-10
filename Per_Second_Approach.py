@@ -113,7 +113,7 @@ outs = pd.DataFrame(columns=['Bal. Acc Train', 'Bal. Acc Val', 'Bal. Acc Test', 
 #%% Execute DOE 
 # Either as a single case or in batch mode
 
-single_case = True
+single_case = False
 if single_case:
     range_doe = [35] # Choose which single case you want to run
 else:
@@ -244,7 +244,7 @@ for i in range_doe:  #
     residual_val = (np.abs(val_pred - df_3_val)).mean(axis=1)
     residual_test = (np.abs(ts_pred - df_3_ts)).mean(axis=1)
 
-    thr = np.quantile(residual_tr,0.9)
+    thr = np.quantile(residual_tr,0.3) # Base the threshold on the approximate number of positive vs negative samples in data
     
     y_tr_pred_ae = np.ones(shape=y_train.shape)
     y_tr_pred_ae[residual_tr > thr] = 0
@@ -295,5 +295,3 @@ if single_case:
 else:
     master_out = pd.concat([DOE, outs], axis=1)
 master_out.to_csv('DOE Results ' + str(datetime.now().date()) + '_1' + '.csv')
-    
-    
