@@ -29,9 +29,6 @@ from sklearn.utils.multiclass import unique_labels
 from keras.metrics import binary_crossentropy
 
 import time
-
-time_BL = datetime(2019, 5, 1, 0, 0, 0)  # Baseline is first day of May 2019
-
 #%% Loading the experiment data and identifying appropriate labels
 
 path1 = '_data_20190502.csv'
