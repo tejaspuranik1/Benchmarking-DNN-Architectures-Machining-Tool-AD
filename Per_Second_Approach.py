@@ -1,7 +1,28 @@
 # -*- coding: utf-8 -*-
 """
 @author: Tejas Puranik
-This file contains the code for performing benchmarking of deep neural network architectures
+This file contains the code for performing benchmarking of deep neural network architectures. 
+The required input for the code is 2 files containing data from experimental cutting runs. 
+The data consists of the following columns that are generated after data wrangling from the raw data:
+
+'Time'
+
+Input Features:
+Sensor Measurement Features: 
+
+'Current Mean', 'Current Std', 'Current Skewness', 'Current Kurtosis', 'Current RMS', 
+'Current Crest Factor', 'Current Peak', 'Vibration Mean', 'Vibration Std', 'Vibration Skewness',
+'Vibration Kurtosis','Vibration RMS', 'Vibration Crest Factor', 'Vibration Peak', 
+
+Machine Controller Features (Loads, Speeds, Positions of the cutting tool etc.):
+'LS1cmd', 'LS1load', 'LS1speed', 'LX1load', 'LX1actw', 'LZ1actw', 'LZ1load', 'x', 'y', 'z',
+
+Experimental Conditions:
+'Cutting Depth (mm)', 'Finishing Feed Rate (mm/rev)', 'Surface Speed (M/min)'
+
+Labels:
+Tool Condition: Good or Bad
+Operation: Turning or Facing
 """
 
 #%% Importing packages and defining required functions
