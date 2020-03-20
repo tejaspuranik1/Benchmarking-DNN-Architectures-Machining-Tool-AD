@@ -9,12 +9,12 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
 # output directory 
-root_dir = '/Users/agharbi/Desktop/Processed Data Genos/'
+root_dir = '/Users/agharbi/Desktop/Genos Study/'
 
 
 # import data, df1 and df2 will be used for training and testing, df3 will be used for validation
-dataframe1 = pd.read_csv(r'/Users/agharbi/Desktop/Processed Data Genos/_data_20190502.csv') 
-dataframe2 = pd.read_csv(r'/Users/agharbi/Desktop/Processed Data Genos/_data_20190506.csv')
+dataframe1 = pd.read_csv(r'/Users/agharbi/Desktop/Genos Study/Data/_data_20190502.csv') 
+dataframe2 = pd.read_csv(r'/Users/agharbi/Desktop/Genos Study/Data/_data_20190506.csv')
 
 
 # encode tool quality 
